@@ -11,7 +11,7 @@ class MainController extends AppController {
         $this->setMeta('Home Page', 'Description...', 'Keyword...');
 
         $brands = \R::find('brand');
-        // debug($brands);
+        $hits   = \R::find('product', "hit = '1' AND status = '1' LIMIT 8 ");
         $this->set(compact('brands', 'hits'));
     }
 
